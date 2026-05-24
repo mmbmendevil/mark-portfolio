@@ -11,17 +11,16 @@ interface SpecializationCardProps {
   title: string;
   desc: string;
   tags: string[];
-  color: string;
   featured?: boolean;
 }
 
-function SpecializationCard({ icon: Icon, title, desc, tags, color, featured }: SpecializationCardProps) {
+function SpecializationCard({ icon: Icon, title, desc, tags, featured }: SpecializationCardProps) {
   return (
     <div className={cn(
-      "group relative rounded-2xl border p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-md",
+      "group relative rounded-2xl border p-6 shadow-sm backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-md",
       featured 
-        ? "border-primary/25 bg-primary/[0.03] dark:bg-primary/[0.02]" 
-        : "border-border/40 bg-surface/40 hover:bg-surface/60 hover:border-border/70"
+        ? "border-primary/30 bg-primary/[0.05] dark:border-primary/25 dark:bg-primary/[0.02]" 
+        : "border-border/60 bg-surface/70 hover:border-border hover:bg-surface dark:border-border/40 dark:bg-surface/40 dark:hover:bg-surface/60 dark:hover:border-border/70"
     )}>
       {/* Featured ambient glow */}
       {featured && (
@@ -31,7 +30,7 @@ function SpecializationCard({ icon: Icon, title, desc, tags, color, featured }: 
       <div className="flex items-start gap-4">
         <div className={cn(
           "flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border shadow-sm transition-colors",
-          featured ? "border-primary/20 bg-primary/10" : "border-border/50 bg-surface group-hover:bg-foreground/5"
+          featured ? "border-primary/20 bg-primary/10" : "border-border/60 bg-background/70 group-hover:bg-background dark:border-border/50 dark:bg-surface dark:group-hover:bg-foreground/5"
         )}>
           <Icon className={cn("h-5 w-5 transition-colors", featured ? "text-primary" : "text-foreground/70 group-hover:text-foreground")} />
         </div>
@@ -44,7 +43,7 @@ function SpecializationCard({ icon: Icon, title, desc, tags, color, featured }: 
           <p className="text-xs leading-relaxed text-muted-foreground/90 font-medium">{desc}</p>
           <div className="flex flex-wrap gap-1.5 pt-2.5">
             {tags.map((tag) => (
-              <span key={tag} className="rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 px-2.5 py-0.5 text-[10px] font-medium text-foreground/70">
+              <span key={tag} className="rounded-full border border-border/70 bg-background/70 px-2.5 py-0.5 text-[10px] font-medium text-foreground/70 shadow-sm dark:border-white/5 dark:bg-white/5 dark:shadow-none">
                 {tag}
               </span>
             ))}
@@ -62,14 +61,12 @@ export function AboutSection() {
       title: "Full-Stack Engineering",
       desc: "Architecting high-performance systems with Next.js and TypeScript. Focused on scalable APIs and pristine UI.",
       tags: ["Next.js", "TypeScript", "Node.js"],
-      color: "bg-violet-500",
     },
     {
       icon: BrainCircuit,
       title: "AI & Adaptive Learning Research",
       desc: "Modeling student cognition via Bayesian Knowledge Tracing and Cognitive Diagnostic Models to build adaptive education.",
       tags: ["BKT / IRT", "EdTech AI", "Adaptive"],
-      color: "bg-blue-500",
       featured: true,
     },
     {
@@ -77,7 +74,6 @@ export function AboutSection() {
       title: "Mobile Architectures",
       desc: "Engineering memory-efficient, offline-first native Android apps with Kotlin and modern SDKs.",
       tags: ["Kotlin", "Android SDK", "UX"],
-      color: "bg-indigo-500",
     },
   ];
 
@@ -103,7 +99,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="relative px-6 py-24 sm:py-32">
+    <section id="about" className="relative bg-background px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading title="About Me" subtitle="Bridging the gap between software engineering and academic research." />
 
@@ -115,7 +111,7 @@ export function AboutSection() {
             
             {/* Story Card */}
             <FadeUp delay={0.1}>
-              <div className="relative rounded-2xl border border-border/50 bg-surface/40 p-8 backdrop-blur-sm shadow-[0_4px_30px_rgba(0,0,0,0.04)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.15)] overflow-hidden">
+              <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-surface/70 p-8 shadow-sm backdrop-blur-sm dark:border-border/50 dark:bg-surface/40 dark:shadow-[0_4px_30px_rgba(0,0,0,0.15)]">
                 <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-primary to-blue-500" />
                 <h3 className="text-xl font-bold text-foreground tracking-tight mb-4">My Philosophy</h3>
                 
@@ -175,7 +171,7 @@ export function AboutSection() {
 
             {/* Core Strengths Glass Card */}
             <FadeUp delay={0.5}>
-              <div className="rounded-2xl border border-border/50 bg-surface/40 p-6 backdrop-blur-sm">
+              <div className="rounded-2xl border border-border/60 bg-surface/70 p-6 shadow-sm backdrop-blur-sm dark:border-border/50 dark:bg-surface/40">
                 <h4 className="text-xs font-bold uppercase tracking-widest text-primary mb-5">Strengths & Priorities</h4>
                 <div className="space-y-4">
                   {strengths.map((item) => (

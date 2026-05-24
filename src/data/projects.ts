@@ -14,7 +14,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "NutriMateApp",
-    metadata: "2026 • Android • Offline-First Native App",
+    metadata: "2025 • Android • Offline-First Native App",
     challenge: "Users struggle to consistently track their daily macros due to overly complex interfaces and reliance on constant internet connectivity.",
     solution: "Engineered a native Kotlin application with a robust SQLite architecture, enabling fluid, offline-first interactions and highly personalized caloric tracking.",
     tags: ["Kotlin", "Android Studio", "SQLite", "Material Design"],

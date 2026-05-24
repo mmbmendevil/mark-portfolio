@@ -222,7 +222,7 @@ function PulseChatMockup() {
 
 // Reusable card component with premium glassmorphism & micro‑interactions
 function ProductCard({ product }: { product: FutureProduct }) {
-  const containerClasses = `group relative overflow-hidden rounded-2xl border border-white/5 bg-black/40 backdrop-blur-xl transition-all duration-500 flex flex-col h-full hover:border-primary/30 hover:bg-white/[0.04] hover:shadow-[0_0_50px_rgba(124,58,237,0.12)] hover:-translate-y-2`;
+  const containerClasses = `group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-surface/80 shadow-sm backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-primary/30 hover:bg-surface hover:shadow-[0_18px_45px_rgba(124,58,237,0.12)] dark:border-white/5 dark:bg-black/40 dark:hover:bg-white/[0.04] dark:hover:shadow-[0_0_50px_rgba(124,58,237,0.12)]`;
   
   const statusPill = (
     <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 border border-primary/20 px-3 py-1 text-[11px] font-semibold text-primary transition-all duration-300 group-hover:bg-primary/20 backdrop-blur-md">
@@ -241,7 +241,7 @@ function ProductCard({ product }: { product: FutureProduct }) {
         <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-primary/10 via-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
         {/* Image / Live UI Graphic Mockup */}
-        <div className="relative w-full aspect-[16/10] min-h-[220px] sm:min-h-[260px] overflow-hidden rounded-t-2xl bg-muted/20 border-b border-white/5">
+        <div className="relative w-full aspect-[16/10] min-h-[220px] sm:min-h-[260px] overflow-hidden rounded-t-2xl bg-muted/20 border-b border-border/60 dark:border-white/5">
           {product.title === "AI Caption Generator" ? (
             <AICaptionMockup />
           ) : product.title === "OnlyFunds" ? (
@@ -250,7 +250,7 @@ function ProductCard({ product }: { product: FutureProduct }) {
             <PulseChatMockup />
           )}
           {/* Edge shadow and dark bottom fade to make title pop and blend with the dark themed card */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 pointer-events-none" />
         </div>
 
         {/* Content Box */}
@@ -271,7 +271,7 @@ function ProductCard({ product }: { product: FutureProduct }) {
             {product.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full bg-white/[0.03] border border-white/10 px-3 py-1 text-[10px] font-semibold text-muted-foreground shadow-sm backdrop-blur-md group-hover:border-primary/20 transition-colors"
+                className="rounded-full border border-border/70 bg-background/70 px-3 py-1 text-[10px] font-semibold text-muted-foreground shadow-sm backdrop-blur-md transition-colors group-hover:border-primary/25 group-hover:text-foreground dark:border-white/10 dark:bg-white/[0.03] dark:group-hover:border-primary/20"
               >
                 {tag}
               </span>
@@ -279,7 +279,7 @@ function ProductCard({ product }: { product: FutureProduct }) {
           </div>
 
           {/* Action Button Row */}
-          <div className="flex items-center justify-between border-t border-white/5 pt-4 mt-auto font-medium">
+          <div className="mt-auto flex items-center justify-between border-t border-border/60 pt-4 font-medium dark:border-white/5">
             <span className="text-xs text-muted-foreground/60 group-hover:text-foreground transition-colors duration-300">
               Pipeline Case Study
             </span>
@@ -298,11 +298,11 @@ function ProductCard({ product }: { product: FutureProduct }) {
 
 export function FutureProjectsSection() {
   return (
-    <section id="future-projects" className="relative px-6 py-24 sm:py-32">
+    <section id="future-projects" className="relative bg-background px-6 py-24 sm:py-32">
       {/* Subtle ambient background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
-        <div className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-purple-200/5 blur-[120px]" />
+        <div className="absolute left-1/4 top-1/4 h-[500px] w-[500px] rounded-full bg-primary/[0.06] blur-[120px] dark:bg-primary/5" />
+        <div className="absolute right-1/4 bottom-1/4 h-[400px] w-[400px] rounded-full bg-blue-500/[0.04] blur-[120px] dark:bg-purple-200/5" />
       </div>
 
       <div className="mx-auto max-w-6xl relative z-10 font-sans">

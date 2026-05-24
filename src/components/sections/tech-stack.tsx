@@ -31,7 +31,7 @@ const glowColors: Record<string, string> = {
 
 export function TechStackSection() {
   return (
-    <section id="tech-stack" className="relative px-6 py-24 sm:py-32">
+    <section id="tech-stack" className="relative bg-background px-6 py-24 sm:py-32">
       <div className="mx-auto max-w-6xl">
         <SectionHeading title="Tech Stack" subtitle="A curated collection of modern technologies and methodologies I specialize in." />
 
@@ -39,7 +39,7 @@ export function TechStackSection() {
           
           {/* ════ 1. FEATURED AI SECTION (Full Width) ════ */}
           <FadeUp>
-            <div className="group/panel relative overflow-hidden rounded-[2rem] border border-border/40 bg-surface/30 p-8 sm:p-10 backdrop-blur-xl shadow-sm transition-all duration-500 hover:border-primary/30 hover:bg-surface/50 hover:shadow-md">
+            <div className="group/panel relative overflow-hidden rounded-[2rem] border border-border/60 bg-surface/60 p-8 shadow-sm backdrop-blur-xl transition-all duration-500 hover:border-primary/30 hover:bg-surface/80 hover:shadow-md sm:p-10 dark:border-border/40 dark:bg-surface/30 dark:hover:bg-surface/50">
               <div className="absolute top-0 right-0 -z-10 h-[400px] w-[400px] rounded-full bg-primary/[0.03] blur-[100px] pointer-events-none transition-opacity duration-500 group-hover/panel:opacity-100 opacity-50" />
               
               <div className="mb-8 max-w-2xl">
@@ -61,7 +61,7 @@ export function TechStackSection() {
                 {techStack.find((cat) => cat.title === "Research & AI Specialization")?.items.map((tech) => {
                   const Icon = TechIcons[tech.icon];
                   return (
-                    <div key={tech.name} className="group/item relative flex flex-col gap-4 rounded-2xl border border-white/5 bg-black/20 dark:bg-white/5 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/[0.04] hover:shadow-[0_8px_24px_-8px_rgba(124,58,237,0.2)]">
+                    <div key={tech.name} className="group/item relative flex flex-col gap-4 rounded-2xl border border-border/60 bg-background/70 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/[0.04] hover:shadow-[0_8px_24px_-8px_rgba(124,58,237,0.2)] dark:border-white/5 dark:bg-white/5 dark:shadow-none">
                       <div className="flex items-center gap-3">
                         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-surface border border-border/40 shadow-sm transition-colors duration-300 group-hover/item:border-primary/30 group-hover/item:bg-primary/10 text-foreground/70 group-hover/item:text-primary">
                           {Icon ? <Icon className="h-5 w-5 object-contain" /> : <span>🧠</span>}
@@ -84,7 +84,7 @@ export function TechStackSection() {
           <div className="grid gap-6 lg:grid-cols-2">
             {/* Frontend */}
             <FadeUp delay={0.1}>
-              <div className="group/panel h-full rounded-[2rem] border border-border/40 bg-surface/30 p-8 backdrop-blur-xl shadow-sm transition-all duration-500 hover:border-foreground/10 hover:bg-surface/50">
+              <div className="group/panel h-full rounded-[2rem] border border-border/60 bg-surface/60 p-8 shadow-sm backdrop-blur-xl transition-all duration-500 hover:border-foreground/10 hover:bg-surface/80 dark:border-border/40 dark:bg-surface/30 dark:hover:bg-surface/50">
                 <div className="mb-8">
                   <h3 className="text-[11px] font-bold uppercase tracking-widest text-foreground/70 mb-1.5">Frontend Systems</h3>
                   <p className="text-sm text-muted-foreground/80 font-medium">Crafting scalable and performant interfaces.</p>
@@ -94,7 +94,7 @@ export function TechStackSection() {
                     const Icon = TechIcons[tech.icon];
                     const glowClass = glowColors[tech.icon] || "group-hover/item:border-primary/20 group-hover/item:shadow-sm group-hover/item:bg-primary/[0.02]";
                     return (
-                      <div key={tech.name} className={`group/item flex items-center gap-3.5 rounded-2xl border border-white/5 bg-black/[0.03] dark:bg-white/[0.02] p-3 transition-all duration-300 hover:scale-[1.02] ${glowClass}`}>
+                      <div key={tech.name} className={`group/item flex items-center gap-3.5 rounded-2xl border border-border/60 bg-background/70 p-3 shadow-sm transition-all duration-300 hover:scale-[1.02] dark:border-white/5 dark:bg-white/[0.02] dark:shadow-none ${glowClass}`}>
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-surface border border-border/40 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] transition-transform duration-300 group-hover/item:scale-105">
                           {Icon ? <Icon className="h-5 w-5 object-contain" /> : <span>⚛️</span>}
                         </div>
@@ -110,7 +110,7 @@ export function TechStackSection() {
 
             {/* Backend */}
             <FadeUp delay={0.15}>
-              <div className="group/panel h-full rounded-[2rem] border border-border/40 bg-surface/30 p-8 backdrop-blur-xl shadow-sm transition-all duration-500 hover:border-foreground/10 hover:bg-surface/50">
+              <div className="group/panel h-full rounded-[2rem] border border-border/60 bg-surface/60 p-8 shadow-sm backdrop-blur-xl transition-all duration-500 hover:border-foreground/10 hover:bg-surface/80 dark:border-border/40 dark:bg-surface/30 dark:hover:bg-surface/50">
                 <div className="mb-8">
                   <h3 className="text-[11px] font-bold uppercase tracking-widest text-foreground/70 mb-1.5">Backend Infrastructure</h3>
                   <p className="text-sm text-muted-foreground/80 font-medium">Building reliable APIs and server architectures.</p>
@@ -120,7 +120,7 @@ export function TechStackSection() {
                     const Icon = TechIcons[tech.icon];
                     const glowClass = glowColors[tech.icon] || "group-hover/item:border-primary/20 group-hover/item:shadow-sm group-hover/item:bg-primary/[0.02]";
                     return (
-                      <div key={tech.name} className={`group/item flex items-center gap-3.5 rounded-2xl border border-white/5 bg-black/[0.03] dark:bg-white/[0.02] p-3 transition-all duration-300 hover:scale-[1.02] ${glowClass}`}>
+                      <div key={tech.name} className={`group/item flex items-center gap-3.5 rounded-2xl border border-border/60 bg-background/70 p-3 shadow-sm transition-all duration-300 hover:scale-[1.02] dark:border-white/5 dark:bg-white/[0.02] dark:shadow-none ${glowClass}`}>
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-surface border border-border/40 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] transition-transform duration-300 group-hover/item:scale-105">
                           {Icon ? <Icon className="h-5 w-5 object-contain" /> : <span>🟢</span>}
                         </div>
@@ -139,7 +139,7 @@ export function TechStackSection() {
           <div className="grid gap-6 lg:grid-cols-2">
             {/* Mobile */}
             <FadeUp delay={0.2}>
-              <div className="group/panel h-full rounded-[2rem] border border-border/40 bg-surface/30 p-8 backdrop-blur-xl shadow-sm transition-all duration-500 hover:border-foreground/10 hover:bg-surface/50">
+              <div className="group/panel h-full rounded-[2rem] border border-border/60 bg-surface/60 p-8 shadow-sm backdrop-blur-xl transition-all duration-500 hover:border-foreground/10 hover:bg-surface/80 dark:border-border/40 dark:bg-surface/30 dark:hover:bg-surface/50">
                 <div className="mb-6">
                   <h3 className="text-[11px] font-bold uppercase tracking-widest text-foreground/70 mb-1.5">Mobile Ecosystem</h3>
                   <p className="text-sm text-muted-foreground/80 font-medium">Native apps with offline-first capabilities.</p>
@@ -149,7 +149,7 @@ export function TechStackSection() {
                     const Icon = TechIcons[tech.icon];
                     const glowClass = glowColors[tech.icon] || "group-hover/item:border-primary/20 group-hover/item:shadow-sm group-hover/item:bg-primary/[0.02]";
                     return (
-                      <div key={tech.name} className={`group/item flex items-center gap-3.5 rounded-2xl border border-white/5 bg-black/[0.03] dark:bg-white/[0.02] p-3 transition-all duration-300 hover:scale-[1.02] ${glowClass}`}>
+                      <div key={tech.name} className={`group/item flex items-center gap-3.5 rounded-2xl border border-border/60 bg-background/70 p-3 shadow-sm transition-all duration-300 hover:scale-[1.02] dark:border-white/5 dark:bg-white/[0.02] dark:shadow-none ${glowClass}`}>
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-surface border border-border/40 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.05)] transition-transform duration-300 group-hover/item:scale-105">
                           {Icon ? <Icon className="h-5 w-5 object-contain" /> : <span>📱</span>}
                         </div>
@@ -165,7 +165,7 @@ export function TechStackSection() {
 
             {/* Tools */}
             <FadeUp delay={0.25}>
-              <div className="group/panel h-full rounded-[2rem] border border-border/40 bg-surface/30 p-8 backdrop-blur-xl shadow-sm transition-all duration-500 hover:border-foreground/10 hover:bg-surface/50">
+              <div className="group/panel h-full rounded-[2rem] border border-border/60 bg-surface/60 p-8 shadow-sm backdrop-blur-xl transition-all duration-500 hover:border-foreground/10 hover:bg-surface/80 dark:border-border/40 dark:bg-surface/30 dark:hover:bg-surface/50">
                 <div className="mb-6">
                   <h3 className="text-[11px] font-bold uppercase tracking-widest text-foreground/70 mb-1.5">Development Workflow</h3>
                   <p className="text-sm text-muted-foreground/80 font-medium">Modern tooling for rapid iteration.</p>
@@ -175,7 +175,7 @@ export function TechStackSection() {
                     const Icon = TechIcons[tech.icon];
                     const glowClass = glowColors[tech.icon] || "group-hover/item:border-primary/20 group-hover/item:shadow-sm group-hover/item:bg-primary/[0.02]";
                     return (
-                      <div key={tech.name} className={`group/item flex h-12 w-full items-center justify-center rounded-xl border border-white/5 bg-black/[0.03] dark:bg-white/[0.02] p-2.5 transition-all duration-300 hover:-translate-y-0.5 ${glowClass}`} title={tech.name}>
+                      <div key={tech.name} className={`group/item flex h-12 w-full items-center justify-center rounded-xl border border-border/60 bg-background/70 p-2.5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 dark:border-white/5 dark:bg-white/[0.02] dark:shadow-none ${glowClass}`} title={tech.name}>
                         <div className="flex h-full w-full items-center justify-center transition-transform duration-300 group-hover/item:scale-110">
                           {Icon ? <Icon className="h-full w-full object-contain" /> : <span>🛠️</span>}
                         </div>
