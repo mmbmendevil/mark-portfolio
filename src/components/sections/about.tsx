@@ -60,7 +60,7 @@ export function AboutSection() {
       icon: Code2,
       title: "Full-Stack Engineering",
       desc: "Architecting high-performance systems with Next.js and TypeScript. Focused on scalable APIs and pristine UI.",
-      tags: ["Next.js", "TypeScript", "Node.js"],
+      tags: ["React", "Next.js", "TypeScript", "Node.js"],
     },
     {
       icon: BrainCircuit,
